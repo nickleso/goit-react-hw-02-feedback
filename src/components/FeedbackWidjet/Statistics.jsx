@@ -1,3 +1,10 @@
+import {
+  FeedbackList,
+  FeedbacktItem,
+  StyledStats,
+  StyledData,
+} from './FeedbackWidjet.styled';
+
 export const Statistics = ({
   good,
   neutral,
@@ -8,25 +15,36 @@ export const Statistics = ({
   return (
     <>
       {total > 0 && (
-        <ul>
-          <li>
-            <p>Good: {good}</p>
-          </li>
-          <li>
-            <p>Neutral: {neutral}</p>
-          </li>
-          <li>
-            <p>Bad: {bad}</p>
-          </li>
-          <li>
-            <p>Total: {total}</p>
-          </li>
-          <li>
-            <p>
-              Positive feedback: {positivePercentage ? positivePercentage : 0}%
-            </p>
-          </li>
-        </ul>
+        <FeedbackList>
+          <FeedbacktItem>
+            <StyledStats>
+              Good: <StyledData>{good}</StyledData>
+            </StyledStats>
+          </FeedbacktItem>
+          <FeedbacktItem>
+            <StyledStats>
+              Neutral: <StyledData>{neutral}</StyledData>
+            </StyledStats>
+          </FeedbacktItem>
+          <FeedbacktItem>
+            <StyledStats>
+              Bad: <StyledData>{bad}</StyledData>
+            </StyledStats>
+          </FeedbacktItem>
+          <FeedbacktItem>
+            <StyledStats>
+              Total: <StyledData>{total}</StyledData>
+            </StyledStats>
+          </FeedbacktItem>
+          <FeedbacktItem>
+            <StyledStats>
+              Positive feedback:{' '}
+              <StyledData>
+                {positivePercentage ? positivePercentage : 0}%
+              </StyledData>
+            </StyledStats>
+          </FeedbacktItem>
+        </FeedbackList>
       )}
     </>
   );

@@ -48,7 +48,7 @@ class FeedbackWidjet extends Component {
             onLeaveBadFeedback={this.addBadFeedback}
           />
         </Section>
-        <Section title={'Statistics'}>
+        <Section style={{ backgroundColor: 'white' }} title={'Statistics'}>
           <Statistics
             good={good}
             neutral={neutral}

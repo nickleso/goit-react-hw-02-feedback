@@ -1,3 +1,9 @@
+import {
+  FeedbackList,
+  ButtonItem,
+  StyledButton,
+} from './FeedbackWidjet.styled';
+
 export const FeedbackOptions = ({
   onLeaveGoodFeedback,
   onLeaveaNeutralFeedback,
@@ -5,17 +11,24 @@ export const FeedbackOptions = ({
 }) => {
   return (
     <>
-      <div>
-        <button type="button" onClick={onLeaveGoodFeedback}>
-          Good
-        </button>
-        <button type="button" onClick={onLeaveaNeutralFeedback}>
-          Neutral
-        </button>
-        <button type="button" onClick={onLeaveBadFeedback}>
-          Bad
-        </button>
-      </div>
+      <FeedbackList>
+        <ButtonItem>
+          <StyledButton type="button" onClick={onLeaveGoodFeedback}>
+            Good
+          </StyledButton>
+        </ButtonItem>
+        <ButtonItem>
+          <StyledButton type="button" onClick={onLeaveaNeutralFeedback}>
+            Neutral
+          </StyledButton>
+        </ButtonItem>
+        <ButtonItem>
+          {' '}
+          <StyledButton type="button" onClick={onLeaveBadFeedback}>
+            Bad
+          </StyledButton>
+        </ButtonItem>
+      </FeedbackList>
     </>
   );
 };

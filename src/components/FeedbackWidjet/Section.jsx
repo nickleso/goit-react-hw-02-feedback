@@ -1,8 +1,10 @@
+import { StyledSection, SectionTitle } from './FeedbackWidjet.styled';
+
 export const Section = ({ title, children }) => {
   return (
-    <section>
-      <h2>{title}</h2>
+    <StyledSection>
+      <SectionTitle>{title}</SectionTitle>
       {children}
-    </section>
+    </StyledSection>
   );
 };
