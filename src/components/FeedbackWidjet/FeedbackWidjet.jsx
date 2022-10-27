@@ -11,16 +11,10 @@ class FeedbackWidjet extends Component {
     bad: 0,
   };
 
-  addGoodFeedback = () => {
-    this.setState(prevState => ({ good: prevState.good + 1 }));
-  };
-
-  addNeutralFeedback = () => {
-    this.setState(prevState => ({ neutral: prevState.neutral + 1 }));
-  };
-
-  addBadFeedback = () => {
-    this.setState(prevState => ({ bad: prevState.bad + 1 }));
+  addFeedback = event => {
+    this.setState(prevState => ({
+      [event.target.name]: prevState[event.target.name] + 1,
+    }));
   };
 
   countTotalFeedback() {
@@ -42,12 +36,9 @@ class FeedbackWidjet extends Component {
     return (
       <div>
         <Section title={'Please live feedback'}>
-          <FeedbackOptions
-            onLeaveGoodFeedback={this.addGoodFeedback}
-            onLeaveaNeutralFeedback={this.addNeutralFeedback}
-            onLeaveBadFeedback={this.addBadFeedback}
-          />
+          <FeedbackOptions onLeaveFeedback={this.addFeedback} />
         </Section>
+
         <Section style={{ backgroundColor: 'white' }} title={'Statistics'}>
           <Statistics
             good={good}
