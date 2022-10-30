@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Statistics } from './FeedbackWidjet/Statistics';
 import { FeedbackOptions } from './FeedbackWidjet/FeedbackOptions';
 import { Notification } from './FeedbackWidjet/Notification';
@@ -60,5 +61,13 @@ class App extends Component {
     );
   }
 }
+
+App.propTypes = {
+  state: PropTypes.shape({
+    good: PropTypes.number.isRequired,
+    neutral: PropTypes.number.isRequired,
+    bad: PropTypes.number.isRequired,
+  }),
+};
 
 export default App;
