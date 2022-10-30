@@ -1,13 +1,11 @@
 import { StyledDiv, SectionTitle } from './FeedbackWidjet.styled';
 
-export const Notification = ({ message, total }) => {
+export const Notification = ({ message }) => {
   return (
     <>
-      {total === 0 && (
-        <StyledDiv>
-          <SectionTitle>{message}</SectionTitle>
-        </StyledDiv>
-      )}
+      <StyledDiv>
+        <SectionTitle>{message}</SectionTitle>
+      </StyledDiv>
     </>
   );
 };

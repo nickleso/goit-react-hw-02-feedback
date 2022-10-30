@@ -4,26 +4,17 @@ import {
   StyledButton,
 } from './FeedbackWidjet.styled';
 
-export const FeedbackOptions = ({ onLeaveFeedback }) => {
+export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
     <>
       <FeedbackList>
-        <ButtonItem>
-          <StyledButton name="good" type="button" onClick={onLeaveFeedback}>
-            Good
-          </StyledButton>
-        </ButtonItem>
-        <ButtonItem>
-          <StyledButton name="neutral" type="button" onClick={onLeaveFeedback}>
-            Neutral
-          </StyledButton>
-        </ButtonItem>
-        <ButtonItem>
-          {' '}
-          <StyledButton name="bad" type="button" onClick={onLeaveFeedback}>
-            Bad
-          </StyledButton>
-        </ButtonItem>
+        {options.map(option => (
+          <ButtonItem key={option}>
+            <StyledButton name={option} type="button" onClick={onLeaveFeedback}>
+              {option.toUpperCase()}
+            </StyledButton>
+          </ButtonItem>
+        ))}
       </FeedbackList>
     </>
   );

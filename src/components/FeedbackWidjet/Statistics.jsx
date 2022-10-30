@@ -14,38 +14,33 @@ export const Statistics = ({
 }) => {
   return (
     <>
-      {total > 0 && (
-        <FeedbackList>
-          <FeedbacktItem>
-            <StyledStats>
-              Good: <StyledData>{good}</StyledData>
-            </StyledStats>
-          </FeedbacktItem>
-          <FeedbacktItem>
-            <StyledStats>
-              Neutral: <StyledData>{neutral}</StyledData>
-            </StyledStats>
-          </FeedbacktItem>
-          <FeedbacktItem>
-            <StyledStats>
-              Bad: <StyledData>{bad}</StyledData>
-            </StyledStats>
-          </FeedbacktItem>
-          <FeedbacktItem>
-            <StyledStats>
-              Total: <StyledData>{total}</StyledData>
-            </StyledStats>
-          </FeedbacktItem>
-          <FeedbacktItem>
-            <StyledStats>
-              Positive feedback:{' '}
-              <StyledData>
-                {positivePercentage ? positivePercentage : 0}%
-              </StyledData>
-            </StyledStats>
-          </FeedbacktItem>
-        </FeedbackList>
-      )}
+      <FeedbackList>
+        <FeedbacktItem>
+          <StyledStats>
+            Good: <StyledData>{good}</StyledData>
+          </StyledStats>
+        </FeedbacktItem>
+        <FeedbacktItem>
+          <StyledStats>
+            Neutral: <StyledData>{neutral}</StyledData>
+          </StyledStats>
+        </FeedbacktItem>
+        <FeedbacktItem>
+          <StyledStats>
+            Bad: <StyledData>{bad}</StyledData>
+          </StyledStats>
+        </FeedbacktItem>
+        <FeedbacktItem>
+          <StyledStats>
+            Total: <StyledData>{total}</StyledData>
+          </StyledStats>
+        </FeedbacktItem>
+        <FeedbacktItem>
+          <StyledStats>
+            Positive feedback: <StyledData>{positivePercentage}%</StyledData>
+          </StyledStats>
+        </FeedbacktItem>
+      </FeedbackList>
     </>
   );
 };
